@@ -4,14 +4,14 @@ import altair as alt
 
 # Sample data with dates and two series
 data = {
-    'Date': pd.date_range(start='2024-05-19', end='2024-05-26'),
-    'Actual_Germans': [2, 3, 5, 7, 8, 6, 7, 5],
-    'Anticipated_Germans': [2, 4, 6, 7, 9, 8, 7, 6]
+    'Date': pd.date_range(start='2024-05-18', end='2024-05-26'),
+    'Actual_Germans': [3, 4, 5],
+    'Anticipated_Germans': [3, 5, 5, 8, 13, 13, 10, 6]
 }
 
 df = pd.DataFrame(data).set_index('Date')
 
-st.title('Number of Germans Living in Our Home Over Time')
+st.title('Count of Germans at 57 Aldie')
 
 # Create the base chart
 base = alt.Chart(df.reset_index()).encode(
