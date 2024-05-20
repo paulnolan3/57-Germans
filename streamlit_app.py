@@ -11,7 +11,7 @@ data = {
 
 df = pd.DataFrame(data).set_index('Date')
 
-st.title('Number of Germans Living in Our Home Over Time')
+st.title('Count of Germans at 57 Aldie')
 
 # Create the base chart
 base = alt.Chart(df.reset_index()).encode(
