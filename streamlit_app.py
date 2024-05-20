@@ -53,6 +53,6 @@ chart = (line + points).properties(
 st.altair_chart(chart, use_container_width=True)
 
 # Optional: Adding customized statistics
-st.write('Statistics')
+st.write('German Statistics')
 custom_stats = df.describe().drop(['25%', '50%', '75%'])
 st.write(custom_stats)
