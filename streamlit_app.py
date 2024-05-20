@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-import altair as alt
 
 # Sample data with dates and two series
 data = {
@@ -14,34 +13,9 @@ df = pd.DataFrame(data)
 st.title('Number of Germans Living in Our Home Over Time')
 st.subheader('Interactive Chart')
 
-# Define the Altair chart
-chart = alt.Chart(df).transform_fold(
-    ['Actual_Germans', 'Anticipated_Germans'],
-    as_=['Legend', 'Number of Germans']
-).mark_line().encode(
-    x='Date:T',
-    y='Number of Germans:Q',
-    color=alt.condition(
-        alt.datum.Legend == 'Actual_Germans',
-        alt.value('blue'),  # Actual series color
-        alt.value('lightgray')  # Anticipated series color
-    ),
-    strokeDash=alt.condition(
-        alt.datum.Legend == 'Anticipated_Germans',
-        alt.value([5, 5]),  # Dashed line for anticipated series
-        alt.value([0])  # Solid line for actual series
-    ),
-    tooltip=['Date:T', 'Legend:N', 'Number of Germans:Q']
-).properties(
-    width=600,
-    height=400
-).interactive()
+# Creating the chart
+st.line_chart(df.set_index('Date')[['Actual_Germans', 'Anticipated_Germans']], width=600, height=400)
 
-st.altair_chart(chart, use_container_width=True)
-
-# Optional: Adding more interactive features
-st.write('Data Table')
-st.dataframe(df)
-
+# Optional: Adding statistics
 st.write('Statistics')
 st.write(df.describe())
