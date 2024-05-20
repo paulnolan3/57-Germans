@@ -1,18 +1,17 @@
 import streamlit as st
 import pandas as pd
 
-# Sample data
+# Sample data with dates
 data = {
-    'Day': [1, 2, 3, 4, 5, 6, 7],
-    'Germans': [2, 3, 5, 7, 8, 6, 7]
+    'Date': pd.date_range(start='2024-05-19', end='2024-05-26'),
+    'Germans': [2, 3, 5, 7, 8, 6, 7, 5]
 }
 
 df = pd.DataFrame(data)
 
 st.title('Number of Germans Living in Our Home Over Time')
-st.subheader('Interactive Chart')
 
-st.line_chart(df.set_index('Day'))
+st.line_chart(df.set_index('Date'))
 
 # Optional: Adding more interactive features
 st.write('Data Table')
