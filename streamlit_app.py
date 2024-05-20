@@ -5,13 +5,13 @@ import altair as alt
 # Sample data with dates and two series
 data = {
     'Date': pd.date_range(start='2024-05-18', end='2024-05-26'),
-    'Actual_Germans': [3, 4, 5, 0, 0, 0, 0, 0],
-    'Anticipated_Germans': [3, 5, 5, 8, 13, 13, 10, 6]
+    'Actual_Germans': [2, 3, 5, None, None, None, None, None, None],
+    'Anticipated_Germans': [2, 4, 6, 7, 9, 8, 7, 6, 5]
 }
 
 df = pd.DataFrame(data).set_index('Date')
 
-st.title('Count of Germans at 57 Aldie')
+st.title('Number of Germans Living in Our Home Over Time')
 
 # Create the base chart
 base = alt.Chart(df.reset_index()).encode(
