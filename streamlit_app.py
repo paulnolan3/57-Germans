@@ -6,7 +6,7 @@ import altair as alt
 data = {
     'Date': pd.date_range(start='2024-05-18', end='2024-05-26'),
     'Actual_Germans': [2, 3, 5, None, None, None, None, None, None],
-    'Anticipated_Germans': [2, 4, 6, 7, 9, 8, 7, 6, 5]
+    'Anticipated_Germans': [2, 3, 6, 11, 12, 12, 9, 7, 5]
 }
 
 df = pd.DataFrame(data).set_index('Date')
