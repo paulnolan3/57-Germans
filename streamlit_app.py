@@ -11,7 +11,6 @@ data = {
 df = pd.DataFrame(data)
 
 st.title('Number of Germans Living in Our Home Over Time')
-st.subheader('Interactive Chart')
 
 # Creating the chart
 st.line_chart(df.set_index('Date')[['Actual_Germans', 'Anticipated_Germans']], width=600, height=400)
