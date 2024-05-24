@@ -5,7 +5,7 @@ import altair as alt
 # Sample data with dates and two series
 data = {
     'Date': pd.date_range(start='2024-05-18', end='2024-05-26'),
-    'Actual_Germans': [2, 3, 5, 13, 13, 8, None, None, None],
+    'Actual_Germans': [2, 3, 5, 13, 13, 13, 8, None, None],
     'Anticipated_Germans': [2, 3, 6, 11, 12, 12, 9, 7, 5]
 }
 
